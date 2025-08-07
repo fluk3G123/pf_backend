@@ -98,6 +98,17 @@ app.delete("/todo", async (req, res, next) => {
   }
 });
 
+app.get("/todo/owner", (req, res) => {
+  const ownerData = {
+    id: "650612087",
+    name: "Nithipong Howong",
+    course_id: "269497",
+    section: "803",
+  };
+
+  res.json(ownerData);
+});
+
 app.post("/todo/all", async (req, res, next) => {
   try {
     await dbClient.delete(todoTable);
